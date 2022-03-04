@@ -16,6 +16,7 @@ function App() {
 	const [password, setPassword] = useState("");
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [email, setEmail] = useState("");
+	const [errorState, setErrorState] = useState([]);
 	const errors = Array();
 
 	return (
@@ -42,6 +43,8 @@ function App() {
 								setPassword={setPassword}
 								setLoggedIn={setLoggedIn}
 								errors={errors}
+								errorState={errorState}
+								setErrorState={setErrorState}
 							/>
 						}
 					/>
@@ -57,6 +60,8 @@ function App() {
 								setPassword={setPassword}
 								setLoggedIn={setLoggedIn}
 								errors={errors}
+								errorState={errorState}
+								setErrorState={setErrorState}
 							/>
 						}
 					/>

@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 import "./formPage.css";
+import Errors from "./Errors";
 
 const Login = ({
 	email,
@@ -9,7 +11,11 @@ const Login = ({
 	setPassword,
 	setLoggedIn,
 	errors,
+	errorState,
+	setErrorState,
 }) => {
+	// Initializing state
+	const [ifError, setIfError] = useState(false);
 	const navigate = useNavigate();
 
 	// Handle submit
@@ -17,10 +23,15 @@ const Login = ({
 		e.preventDefault();
 		if (password === "" || email === "") {
 			errors.push("Fields can not be empty!");
-		} else if (password.length < 6) {
+		}
+		if (password.length < 6) {
 			errors.push("Password must be longer than 5 characters!");
 		}
+
+		setErrorState(errors);
+
 		if (errors.length === 0) {
+			setIfError(false);
 			try {
 				const data = { email, password };
 				const response = await axios.post(
@@ -29,15 +40,15 @@ const Login = ({
 				);
 				console.log(response);
 				setLoggedIn(true);
+				setEmail("");
+				setPassword("");
 				navigate("/");
 			} catch (err) {
 				console.log(err);
 			}
 		} else {
-			console.log(errors);
-			errors = [];
+			setIfError(true);
 			setPassword("");
-			setEmail("");
 		}
 	};
 
@@ -65,6 +76,13 @@ const Login = ({
 					Log in
 				</button>
 			</form>
+			<p>
+				Want to sign up?{" "}
+				<button className="redirect" onClick={() => navigate("/register")}>
+					Sign Up
+				</button>
+			</p>
+			<Errors errorState={errorState} ifError={ifError} />
 		</div>
 	);
 };

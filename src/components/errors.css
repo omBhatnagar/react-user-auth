@@ -1,0 +1,17 @@
+.none {
+	display: none;
+}
+
+.errors {
+	border: 2px solid #ff262a5b;
+	background-color: #ff29293d;
+	padding: 1em 2em;
+	margin: 1em 0;
+	list-style: none;
+}
+
+.errors li {
+	color: #cc0033;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
