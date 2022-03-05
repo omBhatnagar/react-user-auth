@@ -77,7 +77,7 @@ const Login = ({
 				</button>
 			</form>
 			<p>
-				Want to sign up?{" "}
+				Don't have an account?{" "}
 				<button className="redirect" onClick={() => navigate("/register")}>
 					Sign Up
 				</button>
