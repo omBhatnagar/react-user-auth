@@ -17,7 +17,7 @@ function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [email, setEmail] = useState("");
 	const [errorState, setErrorState] = useState([]);
-	const errors = Array();
+	const errors = [];
 
 	return (
 		<div className="App">
