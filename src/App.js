@@ -18,7 +18,7 @@ function App() {
 	const [email, setEmail] = useState("");
 	const [actualEmail, setActualEmail] = useState("");
 	const [errorState, setErrorState] = useState([]);
-	const errors = Array();
+	const errors = [];
 
 	return (
 		<div className="App">

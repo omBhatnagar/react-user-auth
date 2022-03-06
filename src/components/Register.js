@@ -28,7 +28,7 @@ const Register = ({
 		if (name === "" || password === "" || email === "") {
 			errors.push("Fields can not be empty!");
 		}
-		if (password != password1) {
+		if (password !== password1) {
 			errors.push("The passwords do not match!");
 		}
 		if (name.length < 6) {

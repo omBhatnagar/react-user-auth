@@ -96,3 +96,21 @@ p {
 .redirect:hover {
 	cursor: pointer;
 }
+
+@media (max-width: 1220px) {
+	.form-wrapper {
+		width: 60%;
+	}
+}
+
+@media (max-width: 522px) {
+	.form-wrapper {
+		width: 80%;
+	}
+}
+
+@media (max-width: 430px) {
+	.form-wrapper {
+		padding: 0.5em 1em;
+	}
+}
