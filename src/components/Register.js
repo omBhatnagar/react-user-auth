@@ -15,6 +15,7 @@ const Register = ({
 	errors,
 	errorState,
 	setErrorState,
+	setActualEmail,
 }) => {
 	// State
 	const [password1, setPassword1] = useState("");
@@ -50,6 +51,7 @@ const Register = ({
 				console.log(response);
 				setLoggedIn(true);
 				setErrorState([]);
+				setActualEmail(email);
 				setEmail("");
 				setPassword("");
 				setPassword1("");

@@ -13,6 +13,7 @@ const Login = ({
 	errors,
 	errorState,
 	setErrorState,
+	setActualEmail,
 }) => {
 	// Initializing state
 	const [ifError, setIfError] = useState(false);
@@ -40,6 +41,7 @@ const Login = ({
 				);
 				console.log(response);
 				setLoggedIn(true);
+				setActualEmail(email);
 				setEmail("");
 				setPassword("");
 				navigate("/");

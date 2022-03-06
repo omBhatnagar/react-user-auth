@@ -1,7 +1,7 @@
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 
-const Home = ({ setLoggedIn }) => {
+const Home = ({ setLoggedIn, actualEmail }) => {
 	const navigator = useNavigate();
 
 	const logOutHandler = (e) => {
@@ -20,7 +20,7 @@ const Home = ({ setLoggedIn }) => {
 					</li>
 				</ul>
 			</nav>
-			<h1>Home Page</h1>
+			<h1>Hello, {actualEmail}</h1>
 		</div>
 	);
 };

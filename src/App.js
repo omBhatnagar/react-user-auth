@@ -16,6 +16,7 @@ function App() {
 	const [password, setPassword] = useState("");
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [email, setEmail] = useState("");
+	const [actualEmail, setActualEmail] = useState("");
 	const [errorState, setErrorState] = useState([]);
 	const errors = Array();
 
@@ -27,7 +28,7 @@ function App() {
 						path="/"
 						element={
 							loggedIn ? (
-								<Home setLoggedIn={setLoggedIn} />
+								<Home setLoggedIn={setLoggedIn} actualEmail={actualEmail} />
 							) : (
 								<Navigate to="/login" />
 							)
@@ -45,6 +46,7 @@ function App() {
 								errors={errors}
 								errorState={errorState}
 								setErrorState={setErrorState}
+								setActualEmail={setActualEmail}
 							/>
 						}
 					/>
@@ -62,6 +64,7 @@ function App() {
 								errors={errors}
 								errorState={errorState}
 								setErrorState={setErrorState}
+								setActualEmail={setActualEmail}
 							/>
 						}
 					/>
